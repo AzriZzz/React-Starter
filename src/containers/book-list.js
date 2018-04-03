@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectBook } from '../actions/index';
+import { bindActionCreators } from 'redux';
  
 class BookList extends Component {
   renderList() {
@@ -11,6 +13,8 @@ class BookList extends Component {
   }
  
   render() {
+    // Whatever is returned will show up as props
+    // inside of booList
     return (
       <ul className='list-group col-sm-4'>
         {this.renderList()}
@@ -24,5 +28,13 @@ function mapStateToProps(state) {
     books: state.books
   }
 }
+
+// anytgubg returned from this function will bend up as props
+// on the booklist container
+function mapDispatchToProps(dispatch) {
+    // Whenever selectBook is called, the result should be passed
+    // to all of our reducers
+    return bindActionCreators ({ selectBook: selectBook}, dispatch);
+}
  
-export default connect(mapStateToProps)(BookList);
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);

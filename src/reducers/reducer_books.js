@@ -1,8 +1,8 @@
 export default function () {
     return [
-      { title: 'Javascript: The Good Part And The Bad Part' },
+      { title: 'Javascript: The Good Parts A' },
       { title: 'Harry Potter' },
-      { title: 'Toy Story' },
-      { title: '1Q84' }
+      { title: 'The Dark Tower' },
+      { title: 'Eloquent Ruby' }
     ]
   }
